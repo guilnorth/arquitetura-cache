@@ -138,8 +138,14 @@ export class MapDiretoComponent implements OnInit {
         for (let i = 0; i< dataProgram.length; i++){
           this.logProcess.addLog('Execução da linha: '+(i+1));
 
+          console.log('endereço:',dataProgram[i])
+
           indice =  dataProgram[i].substr(dataProgram[i].length - (this.configs.sizeIndex+1));
           tag = dataProgram[i].slice(0,- (this.configs.sizeIndex+1));
+
+          console.log('indice:',indice)
+          console.log('tag:',tag)
+          debugger
 
           this.cacheMapDireto.operacaoCache(indice,tag);
           this.logProcess.addLog('\n \n',true);
