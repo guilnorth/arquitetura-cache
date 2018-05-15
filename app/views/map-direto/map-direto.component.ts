@@ -117,11 +117,13 @@ export class MapDiretoComponent implements OnInit {
 
       return this.processor.getProgramFile(file).flatMap(program =>{
 
-        dadosMemoriaPrincipal = dataMemory.split("\n");
+        /** Uso do .match necessário pois split padrão incluia a quebra de linha **/
+        dadosMemoriaPrincipal = dataMemory.match(/.+/g);
         dadosMemoriaPrincipal = new MemoriaModel(dadosMemoriaPrincipal);
 
         this.processor.setMemoryPrinc(dadosMemoriaPrincipal.cache);
-        dataProgram = program.split("\n");
+        /** Uso do .match necessário pois split padrão incluia a quebra de linha **/
+        dataProgram = program.match(/.+/g);
         this.processor.setFileProgram(dataProgram.cache);
 
         /** Referencia da memoria e do programa passadas para a cache **/
@@ -138,24 +140,15 @@ export class MapDiretoComponent implements OnInit {
         for (let i = 0; i< dataProgram.length; i++){
           this.logProcess.addLog('Execução da linha: '+(i+1));
 
-          console.log('endereço:',dataProgram[i])
-
-          indice =  dataProgram[i].substr(dataProgram[i].length - (this.configs.sizeIndex+1));
-          tag = dataProgram[i].slice(0,- (this.configs.sizeIndex+1));
-
-          console.log('indice:',indice)
-          console.log('tag:',tag)
-          debugger
+          indice =  dataProgram[i].substr(-1 *(parseInt(this.configs.sizeIndex)));
+          tag = dataProgram[i].slice(0,(-1 * (parseInt(this.configs.sizeIndex))));
 
           this.cacheMapDireto.operacaoCache(indice,tag);
           this.logProcess.addLog('\n \n',true);
-          //this.logProcess.addLog('\n');
         }
 
-        /*this.logProcess.addLog('Nº Hits: '+this.cacheMapDireto.hit)
-         this.logProcess.addLog('Nº Miss: '+this.cacheMapDireto.miss)*/
          this.logProcess.addLog('Cache Final',true);
-         this.logProcess.addLog(Utils.objectToString(this.cacheMapDireto.cache),true)
+         this.logProcess.addLog(Utils.objectToString(this.cacheMapDireto.cache),true);
 
 
         this.outputFormat('Direto',this.cacheMapDireto,file);

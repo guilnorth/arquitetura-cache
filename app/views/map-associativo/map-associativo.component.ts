@@ -124,11 +124,14 @@ export class MapAssociativoComponent implements OnInit {
 
       return this.processor.getProgramFile(file).flatMap(program =>{
 
-        dadosMemoriaPrincipal = dataMemory.split("\n");
+        dadosMemoriaPrincipal = dataMemory.match(/.+/g);
 
         dadosMemoriaPrincipal = new MemoriaModel(dadosMemoriaPrincipal);
         this.processor.setMemoryPrinc(dadosMemoriaPrincipal.cache);
-        dataProgram = program.split("\n");
+        /**
+         * Uso do .match necessário pois split padrão incluia a quebra de linha
+         * **/
+        dataProgram = program.match(/.+/g);
         this.processor.setFileProgram(dataProgram.cache);
 
         /** Referencia da memoria e do programa passadas para a cache **/
