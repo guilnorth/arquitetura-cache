@@ -30,7 +30,7 @@ export class Dashboard1Component implements OnInit {
 
   ];*/
 
-  public chartLabels: Array<any> = ['Prog1', 'Prog2', 'Prog3', 'Prog4', 'Prog5'];
+  public chartLabels: Array<any> = ['Programa 1', 'Programa 2', 'Programa 3', 'Programa 4', 'Programa 5'];
 
   public chartColors:Array<any> = [
     {
