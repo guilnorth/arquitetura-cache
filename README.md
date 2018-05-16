@@ -1,11 +1,22 @@
 
-# Trabalho de Arquitetur - Caches
+# Trabalho de Arquitetura - Caches
 
 ________
 
 
-# Instalaçao:
+# Instalação:
 
 **Install:** 
-npm start
+
+        - npm start
+        
+## Desenvolvido Por 
+        
+        - Guilherme Gomes Noronha
+        - Daniel Henrique Silva
+        - Mateus Nogueira
+
+#### Como trabalho para a matéria de Arquitetura de Computadores II,da turma do 5º Período de Computação na UEMG Divinópolis - Noturno
+
+
 

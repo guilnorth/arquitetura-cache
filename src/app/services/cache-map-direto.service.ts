@@ -67,8 +67,10 @@ export class CacheMapDiretoService  {
             this.logProcess.addLog("Dado na memoria :: "+ JSON.stringify(address));
             address = address.address;
 
-            let indiceNew =  address.substr(address.length - (this.sizeIndice+1));
-            let tagNew = address.slice(0,- (this.sizeIndice+1));
+            //let indiceNew =  address.substr(address.length - (this.sizeIndice+1));
+            //let tagNew = address.slice(0,- (this.sizeIndice+1));
+            let indiceNew =  address.substr(-1 *(parseInt(this.sizeIndice)));
+            let tagNew = address.slice(0,(-1 * (parseInt(this.sizeIndice))));
             let indCompleteNew = Utils.indxComplete(indiceNew.toString(2),this.sizeIndice);
 
             this.cache[indCompleteNew].tag = tagNew;
