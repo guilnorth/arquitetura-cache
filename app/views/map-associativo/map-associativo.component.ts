@@ -128,9 +128,7 @@ export class MapAssociativoComponent implements OnInit {
 
         dadosMemoriaPrincipal = new MemoriaModel(dadosMemoriaPrincipal);
         this.processor.setMemoryPrinc(dadosMemoriaPrincipal.cache);
-        /**
-         * Uso do .match necessário pois split padrão incluia a quebra de linha
-         * **/
+        /** Uso do .match necessário pois split padrão incluia a quebra de linha **/
         dataProgram = program.match(/.+/g);
         this.processor.setFileProgram(dataProgram.cache);
 
@@ -147,8 +145,14 @@ export class MapAssociativoComponent implements OnInit {
         /** Percorrendo programa **/
         for (let i = 0; i< dataProgram.length; i++){
           this.logProcess.addLog('Execução da linha: '+(i+1));
-          indice =  dataProgram[i].substr(dataProgram[i].length - (this.configs.sizeIndex+1));
-          tag = dataProgram[i].slice(0,- (this.configs.sizeIndex+1));
+
+          indice =  dataProgram[i].substr(-1 *(parseInt(this.configs.sizeIndex)));
+          tag = dataProgram[i].slice(0,(-1 * (parseInt(this.configs.sizeIndex))));
+
+          /*console.log('dataProgram[i]',dataProgram[i])
+          console.log('indice',indice)
+          console.log('tag',tag)
+          debugger*/
           this.cacheMapAssoc.operacaoCache(indice,tag);
           this.logProcess.addLog('\n \n',true);
         }

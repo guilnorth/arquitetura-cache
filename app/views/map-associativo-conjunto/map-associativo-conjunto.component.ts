@@ -141,11 +141,12 @@ export class MapAssociativoConjuntoComponent implements OnInit {
 
       return this.processor.getProgramFile(file).flatMap(program =>{
 
-        dadosMemoriaPrincipal = dataMemory.split("\n");
+        dadosMemoriaPrincipal = dataMemory.match(/.+/g);
 
         dadosMemoriaPrincipal = new MemoriaModel(dadosMemoriaPrincipal)
         this.processor.setMemoryPrinc(dadosMemoriaPrincipal.cache);
-        dataProgram = program.split("\n");
+        /** Uso do .match necessário pois split padrão incluia a quebra de linha **/
+        dataProgram = program.match(/.+/g);
         this.processor.setFileProgram(dataProgram.cache);
 
         /** Referencia da memoria e do programa passadas para a cache **/
@@ -162,8 +163,13 @@ export class MapAssociativoConjuntoComponent implements OnInit {
         for (let i = 0; i< dataProgram.length; i++){
           this.logProcess.addLog('Execução da linha: '+(i+1));
 
-          indice =  dataProgram[i].substr(dataProgram[i].length - (this.cacheMapAssocConj.sizeIndice+1));
-          tag = dataProgram[i].slice(0,- (this.cacheMapAssocConj.sizeIndice+1))
+          indice =  dataProgram[i].substr(-1 *(parseInt(this.cacheMapAssocConj.sizeIndice)));
+          tag = dataProgram[i].slice(0,(-1 * (parseInt(this.cacheMapAssocConj.sizeIndice))));
+        /* console.log('dataProgram[i]',dataProgram[i])
+          console.log('indice',indice)
+          console.log('tag',tag)*/
+          //indice =  dataProgram[i].substr(dataProgram[i].length - (this.cacheMapAssocConj.sizeIndice+1));
+          //tag = dataProgram[i].slice(0,- (this.cacheMapAssocConj.sizeIndice+1))
 
           this.cacheMapAssocConj.operacaoCache(indice,tag);
           this.logProcess.addLog('\n \n',true);
