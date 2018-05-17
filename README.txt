@@ -1,38 +1,23 @@
-Material Design for Bootstrap - Angular Admin Dashboard
+# Trabalho de Arquitetura - Caches
+<img src="http://www.uemg.br/images/Logo_uemg.jpg" align="right" />
 
-Version: MDB - Angular Admin Dashboard 5.2.3
 
-Documentation:
-http://mdbootstrap.com/angular/
+________
 
-Install: 
-npm i
 
-Run :
-ng serve -o
+# Instalação:
 
-Test:
-ng test 
+**Install:** 
 
-Production Build:
-ng build --prod
+        - npm start
+        
+## Desenvolvido Por 
+        
+        - Guilherme Gomes Noronha
+        - Daniel Henrique Silva
+        - Mateus Nogueira
 
-More info:
-http://mdbootstrap.com/angular/getting-started/
+#### Como trabalho para a matéria de Arquitetura de Computadores II,da turma do 5º Período de Computação na UEMG Divinópolis - Noturno
 
-FAQ
-http://mdbootstrap.com/angular/faq/
 
-Support:
-http://mdbootstrap.com/forums/forum/support/
 
-License:
-http://mdbootstrap.com/license/
-
-Facebook: https://facebook.com/mdbootstrap
-Twitter: https://twitter.com/MDBootstrap
-Google+: https://plus.google.com/u/0/+Mdbootstrap/posts
-Dribbble: https://dribbble.com/mdbootstrap
-
-Contact:
-office@mdbootstrap.com
