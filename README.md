@@ -13,7 +13,8 @@ ________
 
 **Instalação:** 
 
-        - npm start
+         $ git clone https://github.com/guilnorth/arquitetura-cache.git
+         $ npm start
 
 **Este comando instala as bibliotecas necessárias (npm install) e inicia o servidor local da aplicação Angular (ng serve)**
 
