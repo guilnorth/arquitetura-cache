@@ -138,9 +138,9 @@ export class MapAssociativoComponent implements OnInit {
         this.cacheMapAssoc.setProcessor(this.processor);
         this.cacheMapAssoc.setLogProcess(this.logProcess);
 
-        this.logProcess.addLog(`Mapeamento Associativo  \n`,true,true);
-        this.logProcess.addLog(`Cache com ${this.configs.linesCache} linhas\n`,true)
-        this.logProcess.addLog(`Arquivo de Memória: ${this.configs.urlMemory} \n`,true)
+        this.logProcess.addLog(`Mapeamento Totalmente Associativo  \n`,true);
+        this.logProcess.addLog(`Cache com ${this.configs.linesCache} linhas\n`,true);
+        this.logProcess.addLog(`Arquivo de Memória: ${this.configs.urlMemory} \n`,true);
         this.logProcess.addLog(`Arquivo de Programa: ${file} \n\n`,true);
 
         let indice, tag;

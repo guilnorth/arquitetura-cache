@@ -156,7 +156,7 @@ export class MapAssociativoConjuntoComponent implements OnInit {
         this.cacheMapAssocConj.setProcessor(this.processor);
         this.cacheMapAssocConj.setLogProcess(this.logProcess);
 
-        this.logProcess.addLog(`Mapeamento Associativo por Conjunto  \n`,true,true);
+        this.logProcess.addLog(`Mapeamento Associativo por Conjunto  \n`,true);
         this.logProcess.addLog(`Número de vias : ${this.configs.numVias} \n\n`,true);
         this.logProcess.addLog(`Cache com ${this.configs.linesCache} linhas\n`,true);
         this.logProcess.addLog(`Arquivo de Memória: ${this.configs.urlMemory} \n`,true);
