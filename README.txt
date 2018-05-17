@@ -11,7 +11,11 @@ ________
 
 ## Instalação e execução
 
+**Caso ainda não tenha o npm/node instalado, prossiga em:**
+- https://www.npmjs.com/get-npm
+
 **Instalação:**
+
 
          $ git clone https://github.com/guilnorth/arquitetura-cache.git
          $ npm start
