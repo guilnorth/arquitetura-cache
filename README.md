@@ -22,6 +22,9 @@ ________
 
 **Este comando instala as bibliotecas necessárias (npm install) e inicia o servidor local da aplicação Angular (ng serve)**
 
+**Após isso, acessar o servidor local iniciado:**
+- http://localhost:4200
+
 ## Desenvolvido Por 
         
         - Guilherme Gomes Noronha
