@@ -51,6 +51,9 @@ export class MapAssociativoComponent implements OnInit {
   }
 
   initMapAssociativo(grupo:any,lines:any,sizeInd:any,politica:any){
+    this.logProcess.resetLog();
+    this.messageLog = false;
+    this.mostrarGrafico = false;
     this.configs = {
       urlMemory:`Grupo${grupo}/m${grupo}.txt`,
       programFiles:{
@@ -71,10 +74,8 @@ export class MapAssociativoComponent implements OnInit {
           this.processCacheAssoc(this.configs.programFiles.file4).subscribe(() => {
             this.processCacheAssoc(this.configs.programFiles.file5).subscribe(() => {
 
-
               this.messageLog += '\n\n--------------Resumo Geral do Processo--------------\n';
               this.messageLog += this.logProcess.printLogImportant();
-
               this.mostrarGrafico = true;
             })
           })
@@ -137,6 +138,7 @@ export class MapAssociativoComponent implements OnInit {
         this.cacheMapAssoc.setProcessor(this.processor);
         this.cacheMapAssoc.setLogProcess(this.logProcess);
 
+        this.logProcess.addLog(`Mapeamento Associativo  \n`,true,true);
         this.logProcess.addLog(`Cache com ${this.configs.linesCache} linhas\n`,true)
         this.logProcess.addLog(`Arquivo de Memória: ${this.configs.urlMemory} \n`,true)
         this.logProcess.addLog(`Arquivo de Programa: ${file} \n\n`,true);
@@ -149,10 +151,6 @@ export class MapAssociativoComponent implements OnInit {
           indice =  dataProgram[i].substr(-1 *(parseInt(this.configs.sizeIndex)));
           tag = dataProgram[i].slice(0,(-1 * (parseInt(this.configs.sizeIndex))));
 
-          /*console.log('dataProgram[i]',dataProgram[i])
-          console.log('indice',indice)
-          console.log('tag',tag)
-          debugger*/
           this.cacheMapAssoc.operacaoCache(indice,tag);
           this.logProcess.addLog('\n \n',true);
         }

@@ -41,7 +41,7 @@ export class ConfiguraProcessoComponent implements OnInit {
       tipo:'associativo-conjunto',
       numVias:'4',
       politica:'fifo'
-    }]
+    }];
 
     this.grupos = [{
       num:1,
@@ -73,7 +73,6 @@ export class ConfiguraProcessoComponent implements OnInit {
     this.configProc.numVias = (map.numVias)?map.numVias:'';
     this.configProc.cacheTitle = map.title;
     this.configProc.politica = Utils.validatePolitc(map.politica)
-    console.log(this.configProc)
   }
 
   selectGroup(group){
