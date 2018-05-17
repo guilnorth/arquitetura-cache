@@ -75,7 +75,7 @@ export class MapAssociativoConjuntoComponent implements OnInit {
       this.exibeAlert = true;
     }else{
       if(this.configs.numVias == this.configs.linesCache){
-        this.messageAlert = 'Este mapeamento é identico ao correspondente no mapeamento totalmente associativo, por possuir linhas igual ao número de vias.';
+        this.messageAlert = 'Este mapeamento é identico ao correspondente no mapeamento direto, por possuir linhas igual ao número de vias.';
         this.messageLog += '\n'+this.messageAlert+'\n';
         this.exibeAlert = true;
       }

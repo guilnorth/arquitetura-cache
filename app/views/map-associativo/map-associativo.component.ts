@@ -149,7 +149,6 @@ export class MapAssociativoComponent implements OnInit {
           indice =  dataProgram[i].substr(-1 *(parseInt(this.configs.sizeIndex)));
           tag = dataProgram[i].slice(0,(-1 * (parseInt(this.configs.sizeIndex))));
 
-
           /*console.log('dataProgram[i]',dataProgram[i])
           console.log('indice',indice)
           console.log('tag',tag)
