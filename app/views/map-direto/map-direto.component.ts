@@ -134,7 +134,7 @@ export class MapDiretoComponent implements OnInit {
         this.cacheMapDireto.setProcessor(this.processor);
         this.cacheMapDireto.setLogProcess(this.logProcess);
 
-        this.logProcess.addLog(`Mapeamento Direto \n`,true,true);
+        this.logProcess.addLog(`Mapeamento Direto \n`,true);
         this.logProcess.addLog(`Cache com ${this.configs.linesCache} linhas\n`,true);
         this.logProcess.addLog(`Arquivo de Memória: ${this.configs.urlMemory} \n`,true);
         this.logProcess.addLog(`Arquivo de Programa: ${file} \n\n`,true);
