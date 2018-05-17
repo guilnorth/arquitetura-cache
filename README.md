@@ -7,7 +7,7 @@ ________
 ## Demonstração
 **Disponível via GitHub Pages em:** 
 
-        https://guilnorth.github.io/arquitetura-cache
+- https://guilnorth.github.io/arquitetura-cache
  
 ## Instalação e execução
 
