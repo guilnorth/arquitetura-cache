@@ -5,12 +5,14 @@
 ________
 
 
-# Instalação:
+# Instalação e execução:
 
-**Install:** 
+**Instalação:**
 
         - npm start
-        
+
+**Este comando instala as bibliotecas necessárias (npm install) e inicia o servidor local da aplicação Angular (ng serve)**
+
 ## Desenvolvido Por 
         
         - Guilherme Gomes Noronha
