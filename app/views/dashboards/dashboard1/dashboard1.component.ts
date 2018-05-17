@@ -74,8 +74,6 @@ export class Dashboard1Component implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.miss)
-    console.log(this.hits)
     this.chartDatasets = [
       {data: this.hits, label: 'Hits'},
       {data: this.miss, label: 'Miss'},

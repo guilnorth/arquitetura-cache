@@ -30,6 +30,7 @@ export class LogProcessamentoService {
 
   public resetLog(){
     this.logMessages = '';
+    this.logMessagesImportant = '';
   }
 
 }

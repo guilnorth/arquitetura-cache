@@ -55,6 +55,9 @@ export class MapAssociativoConjuntoComponent implements OnInit {
 
   initMapAssociativoConjunto(grupo,lines,sizeInd,numVias,politica){
     this.exibeAlert = false;
+    this.logProcess.resetLog();
+    this.messageLog = false;
+    this.mostrarGrafico = false;
     this.configs = {
       urlMemory:`Grupo${grupo}/m${grupo}.txt`,
       programFiles:{
@@ -153,10 +156,11 @@ export class MapAssociativoConjuntoComponent implements OnInit {
         this.cacheMapAssocConj.setProcessor(this.processor);
         this.cacheMapAssocConj.setLogProcess(this.logProcess);
 
+        this.logProcess.addLog(`Mapeamento Associativo por Conjunto  \n`,true,true);
+        this.logProcess.addLog(`Número de vias : ${this.configs.numVias} \n\n`,true);
         this.logProcess.addLog(`Cache com ${this.configs.linesCache} linhas\n`,true);
         this.logProcess.addLog(`Arquivo de Memória: ${this.configs.urlMemory} \n`,true);
         this.logProcess.addLog(`Arquivo de Programa: ${file} \n`,true);
-        this.logProcess.addLog(`Número de vias : ${this.configs.numVias} \n\n`,true);
 
         let indice, tag;
         /** Percorrendo programa **/
@@ -165,11 +169,7 @@ export class MapAssociativoConjuntoComponent implements OnInit {
 
           indice =  dataProgram[i].substr(-1 *(parseInt(this.cacheMapAssocConj.sizeIndice)));
           tag = dataProgram[i].slice(0,(-1 * (parseInt(this.cacheMapAssocConj.sizeIndice))));
-        /* console.log('dataProgram[i]',dataProgram[i])
-          console.log('indice',indice)
-          console.log('tag',tag)*/
-          //indice =  dataProgram[i].substr(dataProgram[i].length - (this.cacheMapAssocConj.sizeIndice+1));
-          //tag = dataProgram[i].slice(0,- (this.cacheMapAssocConj.sizeIndice+1))
+
 
           this.cacheMapAssocConj.operacaoCache(indice,tag);
           this.logProcess.addLog('\n \n',true);
@@ -183,8 +183,8 @@ export class MapAssociativoConjuntoComponent implements OnInit {
 
         this.outputFormat('Associativo Por Conjunto',this.cacheMapAssocConj,file);
         /** Registrando miss e hit para grafico **/
-        this.registerMiss.push(this.cacheMapAssocConj.miss)
-        this.registerHits.push(this.cacheMapAssocConj.hit)
+        this.registerMiss.push(this.cacheMapAssocConj.miss);
+        this.registerHits.push(this.cacheMapAssocConj.hit);
         return Observable.of(true);
 
 
