@@ -172,7 +172,9 @@ export class MapAssociativoConjuntoComponent implements OnInit {
 
 
           this.cacheMapAssocConj.operacaoCache(indice,tag);
+          this.logProcess.addLog(JSON.stringify(this.cacheMapAssocConj.cache),true);
           this.logProcess.addLog('\n \n',true);
+
         }
 
         /*this.logProcess.addLog('Nº Hits: '+this.cacheMapAssocConj.hit)
