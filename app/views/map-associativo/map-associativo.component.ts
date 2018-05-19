@@ -152,7 +152,9 @@ export class MapAssociativoComponent implements OnInit {
           tag = dataProgram[i].slice(0,(-1 * (parseInt(this.configs.sizeIndex))));
 
           this.cacheMapAssoc.operacaoCache(indice,tag);
+          this.logProcess.addLog(Utils.objectToString(this.cacheMapAssoc.cache),true);
           this.logProcess.addLog('\n \n',true);
+
         }
 
         /*this.logProcess.addLog('Nº Hits: '+this.cacheMapAssoc.hit)
