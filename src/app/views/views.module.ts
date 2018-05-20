@@ -27,6 +27,7 @@ import { ConfiguraProcessoComponent } from './configura-processo/configura-proce
 import { MapAssociativoComponent } from './map-associativo/map-associativo.component';
 import { MapAssociativoConjuntoComponent } from './map-associativo-conjunto/map-associativo-conjunto.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { ArtigoComponent } from './artigo/artigo.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { SobreComponent } from './sobre/sobre.component';
     MapAssociativoComponent,
     MapAssociativoConjuntoComponent,
     SobreComponent,
+    ArtigoComponent,
 
   ],
   exports: [
